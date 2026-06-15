@@ -1,15 +1,15 @@
-# Jack Vonk - Handgemaakte Drums Website
+# Jacks Original Drums - Website
 
 ## Overzicht
 
-Dit project is een statische website ontworpen voor Jack Vonk, een vakman die handgemaakte drums maakt. De website heeft een moderne, responsieve layout die zijn drumcollectie en vakmanschap laat zien, met een contactsectie voor potentiële klanten.
+Dit project is een statische website voor Jacks Original Drums (jacksoriginaldrums.com), een vakman die handgemaakte sjamanendrums maakt. De website heeft een moderne, responsieve layout die zijn drumcollectie en vakmanschap laat zien, met een contactsectie voor potentiële klanten.
 
 ## Projectstructuur
 
 Het project bestaat uit de volgende bestanden en mappen:
 
 ```bash
-vonk/
+jacksoriginaldrums.com/
 ├── index.html          # Hoofdpagina van de website
 ├── css
 │   └── styles.css      # CSS stijlen voor de website

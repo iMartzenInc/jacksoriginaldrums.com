@@ -1,33 +1,38 @@
 /* Custom stijlen voor Drums website */
 
 :root {
-    --drum-primary: #8b5a2b;
-    --drum-secondary: #f5f0e8;
-    --drum-accent: #c17a3a;
-    --text-dark: #333;
+    --drum-primary: #690D36;
+    --drum-secondary: #4a0925;
+    --drum-accent: #C9A030;
+    --text-dark: #2a2a2a;
     --text-light: #f9f9f9;
-    --accent: #e27d60;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Raleway', 'Segoe UI', Tahoma, sans-serif;
     color: var(--text-dark);
     line-height: 1.7;
     margin: 0;
     padding: 0;
 }
 
+/* Bootstrap text-primary override */
+.text-primary {
+    color: var(--drum-primary) !important;
+}
+
 /* Navigatie */
 .navbar {
     background-color: var(--drum-primary);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     padding: 15px 0;
 }
 
 .navbar-brand {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lora', Georgia, serif;
     font-weight: 700;
     font-size: 1.8rem;
+    color: white !important;
 }
 
 .nav-link {
@@ -36,13 +41,14 @@ body {
     transition: color 0.3s;
 }
 
-.nav-link:hover {
-    color: var(--drum-secondary) !important;
+.nav-link:hover,
+.nav-link.active {
+    color: rgba(255, 255, 255, 0.75) !important;
 }
 
 /* Hero sectie */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/drum5.jpg') no-repeat center center;
+    background: linear-gradient(rgba(30, 5, 15, 0.58), rgba(30, 5, 15, 0.58)), url('../images/panter-hero.jpg') no-repeat center center;
     background-size: cover;
     color: white;
     padding: 120px 0;
@@ -55,11 +61,13 @@ body {
     margin: 0 auto;
 }
 
+.hero-content h1 {
+    color: var(--drum-accent);
+}
+
 /* Secties */
 section {
     overflow: hidden;
-    padding: 20px;
-    margin: 10px;
 }
 
 .section-title {
@@ -77,11 +85,13 @@ section {
     bottom: 0;
     height: 3px;
     width: 60px;
-    background-color: var(--drum-primary);
+    background-color: var(--drum-accent);
 }
 
 #about .section-title::after,
-#contact .section-title::after {
+#contact .section-title::after,
+#drums-gallery .section-title::after,
+#for-sale .section-title::after {
     left: 50%;
     transform: translateX(-50%);
 }
@@ -101,13 +111,13 @@ img {
     border-radius: 5px;
 }
 
-/* Drum sectie aanpassingen */
+/* Drum sectie */
 #drums .section-title {
     color: var(--drum-primary);
 }
 
 #drums .section-title::after {
-    background-color: var(--drum-primary);
+    background-color: var(--drum-accent);
 }
 
 .audio-container {
@@ -117,8 +127,8 @@ img {
 }
 
 .drums {
-    background: #fff3e0;
-    border: 1px solid #ffe0b2;
+    background: #fdf8f0;
+    border: 1px solid #e8d090;
     padding: 20px;
     border-radius: 5px;
 }
@@ -134,7 +144,7 @@ audio {
 }
 
 #drums-gallery .section-title::after {
-    background-color: var(--drum-primary);
+    background-color: var(--drum-accent);
 }
 
 .drum-card {
@@ -168,7 +178,7 @@ audio {
     transform: scale(1.05);
 }
 
-/* Sale cards styling */
+/* Sale cards */
 .sale-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
@@ -196,7 +206,7 @@ audio {
     transform: scale(1.1);
 }
 
-/* Drum main image in drums section */
+/* Drum hoofdafbeelding */
 .drum-main-img-container {
     height: 300px;
     overflow: hidden;
@@ -209,7 +219,7 @@ audio {
     border-radius: 10px;
 }
 
-/* Modal styling */
+/* Modal */
 .modal-content {
     border: none;
     border-radius: 15px;
@@ -224,7 +234,7 @@ audio {
     width: auto;
 }
 
-/* Over Ons sectie */
+/* Over Mij */
 .about-icon {
     font-size: 2.5rem;
     color: var(--drum-primary);
@@ -239,7 +249,7 @@ audio {
     transform: translateY(-5px);
 }
 
-/* Contact formulier */
+/* Contact */
 .form-control {
     border: 1px solid #ddd;
     padding: 12px;
@@ -247,11 +257,10 @@ audio {
 }
 
 .form-control:focus {
-    box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.25);
+    box-shadow: 0 0 0 3px rgba(105, 13, 54, 0.2);
     border-color: var(--drum-primary);
 }
 
-/* Contact sectie aanpassingen */
 .contact-info li {
     font-size: 1.1rem;
     margin-bottom: 15px;
@@ -283,12 +292,12 @@ audio {
 
 .social-icon:hover {
     background-color: var(--drum-accent);
-    color: white;
+    color: var(--drum-secondary);
     transform: translateY(-3px);
 }
 
 .hours-box {
-    background-color: rgba(139, 90, 43, 0.1);
+    background-color: rgba(105, 13, 54, 0.08);
     border-left: 4px solid var(--drum-primary);
 }
 
@@ -298,6 +307,10 @@ footer {
     text-align: center;
     padding: 10px;
     color: white;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .social-link {
@@ -322,21 +335,25 @@ footer {
 .btn-primary {
     background-color: var(--drum-primary);
     border-color: var(--drum-primary);
+    color: white;
 }
 
 .btn-primary:hover {
-    background-color: #734c24;
-    border-color: #734c24;
+    background-color: var(--drum-secondary);
+    border-color: var(--drum-secondary);
+    color: white;
 }
 
 .btn-secondary {
-    background-color: var(--drum-accent);
-    border-color: var(--drum-accent);
+    background-color: transparent;
+    border-color: white;
+    color: white;
 }
 
 .btn-secondary:hover {
-    background-color: #a0632e;
-    border-color: #a0632e;
+    background-color: white;
+    border-color: white;
+    color: var(--drum-primary);
 }
 
 .btn-outline-primary {
@@ -354,15 +371,19 @@ footer {
     .hero-section {
         padding: 80px 0;
     }
-    
+
     .hero-content {
         padding: 20px;
     }
-    
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
     .section-title {
         font-size: 1.8rem;
     }
-    
+
     .social-link {
         width: 35px;
         height: 35px;
@@ -375,17 +396,17 @@ footer {
     nav {
         flex-direction: column;
     }
-    
+
     nav a {
         padding: 10px;
     }
-    
-    section {
-        margin: 5px;
+
+    .hero-content h1 {
+        font-size: 1.6rem;
     }
 }
 
-/* Jack photo gallery styling */
+/* Jack foto galerij */
 .jack-photo-container {
     height: 300px;
     overflow: hidden;
