@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const imgSrc = this.getAttribute("data-img");
       const imgTitle = this.getAttribute("data-title");
 
-      // Beveiliging: Valideer dat imgSrc een veilig lokaal pad is (accepteer drum/hout/jack afbeeldingen)
-      if (imgSrc && /^images\/(drum|hout|jack)\d*\.jpg$/.test(imgSrc)) {
+      // Beveiliging: Valideer dat imgSrc een veilig lokaal pad is
+      if (imgSrc && /^images\/(drum|hout|jack|tekoop-[\w-]+)\d*\.jpe?g$/.test(imgSrc)) {
         modalImage.src = imgSrc;
         modalImage.alt = imgTitle || "";
         modalTitle.textContent = imgTitle || "Handgemaakte Drum";
